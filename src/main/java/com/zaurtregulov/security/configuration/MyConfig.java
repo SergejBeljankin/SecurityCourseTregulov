@@ -27,17 +27,17 @@ public class MyConfig {
         return internalResourceViewResolver;
     }
 
-    @Bean
-    public DataSource dataSource() {
-        ComboPooledDataSource dataSource = new ComboPooledDataSource();
-        try {
-            dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
-            dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/security_mvc?useSSL=false");
-            dataSource.setUser("root");
-            dataSource.setPassword("123qwe");
-        } catch (PropertyVetoException e) {
-            e.printStackTrace();
-        }
-        return dataSource;
-    }
+//    @Bean
+//    public DataSource dataSource() {
+//        ComboPooledDataSource dataSource = new ComboPooledDataSource();
+//        try {
+//            dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
+//            dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/my_db?useSSL=false");
+//            dataSource.setUser("root");
+//            dataSource.setPassword("123qwe");
+//        } catch (PropertyVetoException e) {
+//            e.printStackTrace();
+//        }
+//        return dataSource;
+//    }
 }

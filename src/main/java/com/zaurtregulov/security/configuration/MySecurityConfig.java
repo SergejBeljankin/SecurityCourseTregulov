@@ -15,19 +15,22 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    DataSource dataSource;
+//    @Autowired
+//    DataSource dataSource;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
-            auth.jdbcAuthentication().dataSource(dataSource);
+//            auth.jdbcAuthentication().dataSource(dataSource);
         UserBuilder userBuilder = User.withDefaultPasswordEncoder();
+
+        //        когда пароли и роли в БД
 
         auth.inMemoryAuthentication()
                 .withUser(userBuilder.username("zaur").password("zaur").roles("EMPLOYEE"))
                 .withUser(userBuilder.username("elena").password("elena").roles("HR"))
                 .withUser(userBuilder.username("ivan").password("ivan").roles("MANAGER", "HR"));
+
 
     }
 
